@@ -1,0 +1,12 @@
+def decorator_func(function):
+    def wrapper():
+        func = function()
+        print('Обернули функцию: {}'.format(func))
+    return wrapper
+
+
+@decorator_func
+def hello_world():
+    return 'Hello world!'
+
+hello_world()
