@@ -1,0 +1,16 @@
+""" Пример простого декорирования функции с двумя аргументами """
+def decorator_func(function):
+    def wrapper(x, y):
+        func = function(x, y)
+        print('Результат вычислений: {}'.format(func))
+    return wrapper
+
+def multy(x, y):
+    return x*y
+print(multy(12, 2))
+
+@decorator_func
+def multy(x, y):
+    return x*y
+
+multy(12, 2)
